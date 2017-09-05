@@ -5,9 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "npm-run-all --parallel compile-scss compile-js serve",
-    "compile-scss": "node-sass src/scss --output dist/ --watch --recursive --output-style compressed",
+    "compile-scss": "node-sass src/scss --output dist/ --watch --recursive --output-style compressed --include-path ./node_modules",
     "compile-js": "babel src/js --out-file dist/app.js --presets=es2015 --watch",
-    "serve": "browser-sync start --server --files \"dist/*.css, dist/*.js\""
+    "serve": "browser-sync start --server --serveStatic dist --files \"dist/*\""
   },
   "author": "michaelcook.tech",
   "dependencies": {
